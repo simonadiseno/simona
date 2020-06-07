@@ -76,7 +76,7 @@
             <hr class="Galeria__divider"/>
             <ul class="Galeria__listcategories">
               <li class="Galeria__categoryItem Galeria__categoryItem-active" value="Mates">Mates</li>
-              <li class="Galeria__categoryItem" value="Tablas">Tablas</li>
+              <li class="Galeria__categoryItem" value="Tablas">Tablas y cuencos</li>
               <li class="Galeria__categoryItem" value="Personalizados">Personalizados</li>
               <li class="Galeria__categoryItem" value="Todos">Todos</li>
             </ul>
@@ -161,7 +161,7 @@
           }});
         }
 
-        fetch("http://localhost:4000/products").then(res => res.json()).then(res => {
+        fetch("https://simonadiseno.herokuapp.com/products").then(res => res.json()).then(res => {
           products = res.products;
           renderProducts();
         });
