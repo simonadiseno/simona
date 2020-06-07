@@ -238,14 +238,19 @@
   padding: 0;
 }
 .Galeria__categoryItem {
+  position: relative;
   font-size: 18px;
   margin: 0.5rem 0;
   cursor: pointer;
+}
+.Galeria__categoryItem span {
+  position: absolute;
+  bottom: 0;
   width: 50px;
+  border-bottom: 2px solid #db9b88;
 }
 .Galeria__categoryItem-active {
   font-weight: bold;
-  border-bottom: 2px solid #db9b88;
 }
 
 .Galeria__products {
@@ -397,6 +402,9 @@
     width: auto;
     margin: 0 2rem;
     text-align: center;
+  }
+  .Galeria__categoryItem span {
+    width: 100%;
   }
   .Galeria__products {
     flex: 1;

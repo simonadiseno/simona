@@ -61,7 +61,7 @@
       </div>
       <section class="Main__sections">
         <nav class="Sections__nav">
-          <a class="Sections__nav__link" href="/simona">Inicio</a>
+          <a class="Sections__nav__link" href="/">Inicio</a>
           <a class="Sections__nav__link" href="/simona/views/sobremi.html"
             >Sobre mi</a
           >
@@ -75,8 +75,8 @@
             <h1 class="Galeria__title">Catalogo</h1>
             <hr class="Galeria__divider"/>
             <ul class="Galeria__listcategories">
-              <li class="Galeria__categoryItem Galeria__categoryItem-active" value="Mates">Mates</li>
-              <li class="Galeria__categoryItem" value="Tablas">Tablas y cuencos</li>
+              <li class="Galeria__categoryItem Galeria__categoryItem-active" value="Mates"><span></span>Mates</li>
+              <li class="Galeria__categoryItem" value="Tablas y cuencos">Tablas y cuencos</li>
               <li class="Galeria__categoryItem" value="Personalizados">Personalizados</li>
               <li class="Galeria__categoryItem" value="Todos">Todos</li>
             </ul>
@@ -139,8 +139,10 @@
             actualcategory = categories[i].getAttribute("value");
             renderProducts();
             for(let j=0;j<categories.length;j++){
+              categories[j].innerHTML = categories[j].getAttribute("value");
               categories[j].classList.remove("Galeria__categoryItem-active");
             }
+            categories[i].innerHTML = `<span></span>${actualcategory}`;
             categories[i].classList.add("Galeria__categoryItem-active");
           });
         }
