@@ -99,14 +99,14 @@
             <p>Facebook: /simonadiseno</p>
           </div>
           <h2 class="Contacto__subtitle">Tambien podes enviarme un mensaje</h2>
-          <form
-            class="Contacto__form"
-            action="https://simonadiseno.herokuapp.com/sendEmail"
-            enctype="application/json"
-          >
+          <form id="form" class="Contacto__form">
             <div class="Contacto__form__row">
               <label class="Contacto__form__label" for="name">Nombre </label>
               <input class="Contacto__form__input" id="name" type="text" />
+            </div>
+            <div class="Contacto__form__row">
+              <label class="Contacto__form__label" for="phone">Telefono </label>
+              <input class="Contacto__form__input" id="phone" type="text" />
             </div>
             <div class="Contacto__form__row">
               <label class="Contacto__form__label" for="email">Email </label>
@@ -137,6 +137,26 @@
     ></script>
     <script>
       let active = false;
+
+      const form = document.getElementById("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch("https://simonadiseno.herokuapp.com/sendemail", {
+          method: "POST",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify({
+            name: document.getElementById("name").value,
+            phone: document.getElementById("phone").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+          }),
+        });
+      });
+
       const btn = document.getElementById("btn-collapse");
       const nav = document.getElementById("responsive-nav");
       btn.addEventListener(
