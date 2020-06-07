@@ -202,6 +202,7 @@
   padding-left: 2rem;
 }
 .Sobremi__title {
+  font-family: "mellony";
   font-weight: 100;
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
@@ -287,6 +288,7 @@
   padding: 4rem 8rem;
 }
 .Contacto__title {
+  font-family: "mellony";
   font-weight: 100;
   font-size: 3rem;
 }
@@ -342,6 +344,12 @@
   .Main {
     padding-bottom: 0;
   }
+  .Main__header__title {
+    font-size: 5rem;
+  }
+  .Main__header__subtitle {
+    bottom: -10px;
+  }
   .Preview__img__container {
     width: 100%;
     height: auto;
@@ -366,7 +374,7 @@
     display: none;
   }
   .Main__links__link {
-    margin: 1rem 3rem;
+    margin: 1rem 1rem;
   }
   .Inicio__img {
     height: 350px;
