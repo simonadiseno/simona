@@ -154,7 +154,15 @@
             email: document.getElementById("email").value,
             message: document.getElementById("message").value,
           }),
-        });
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            if (res.status === 200) {
+              window.location.reload();
+            } else {
+              alert("Ocurrio un error al enviar el correo, intente mas tarde");
+            }
+          });
       });
 
       const btn = document.getElementById("btn-collapse");
