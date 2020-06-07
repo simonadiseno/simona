@@ -99,7 +99,11 @@
             <p>Facebook: /simonadiseno</p>
           </div>
           <h2 class="Contacto__subtitle">Tambien podes enviarme un mensaje</h2>
-          <form class="Contacto__form" action="">
+          <form
+            class="Contacto__form"
+            action="https://simonadiseno.herokuapp.com/sendEmail"
+            enctype="application/json"
+          >
             <div class="Contacto__form__row">
               <label class="Contacto__form__label" for="name">Nombre </label>
               <input class="Contacto__form__input" id="name" type="text" />
