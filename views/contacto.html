@@ -1,0 +1,140 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simona Diseño</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link href="/static/css/dist/hamburgers.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="Main">
+      <nav id="responsive-nav" class="Main__responsive-nav">
+        <button
+          class="hamburger hamburger--spin"
+          type="button"
+          id="btn-collapse"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <div class="Main__responsive-nav__link"><a href="/">Inicio</a></div>
+        <div class="Main__responsive-nav__link">
+          <a href="/views/sobremi.html">Sobre mi</a>
+        </div>
+        <div class="Main__responsive-nav__link">
+          <a href="/views/galeria.html">Galeria</a>
+        </div>
+        <div class="Main__responsive-nav__link">
+          <a class="active" href="#">Contacto</a>
+        </div>
+      </nav>
+      <header class="Main__header">
+        <h1 class="Main__header__title">Simona</h1>
+        <h2 class="Main__header__subtitle">Objetos de diseño</h2>
+      </header>
+      <div class="Main__links">
+        <a
+          class="Main__links__link"
+          href="https://www.facebook.com/simona.santafeparana"
+          target="__blank"
+        >
+          <img class="Main__links__img" src="/static/assets/facebook.svg" />
+        </a>
+        <a
+          class="Main__links__link"
+          href="https://www.instagram.com/simona.diseno/"
+          target="__blank"
+        >
+          <img class="Main__links__img" src="/static/assets/instagram.svg" />
+        </a>
+        <a
+          class="Main__links__link"
+          href="https://wa.me/543435243489?text=Hola%2c+queria+realizar+una+consulta."
+          target="__blank"
+        >
+          <img class="Main__links__img" src="/static/assets/whatsapp.svg" />
+        </a>
+      </div>
+      <section class="Main__sections">
+        <nav class="Sections__nav">
+          <a class="Sections__nav__link" href="/">Inicio</a>
+          <a class="Sections__nav__link" href="/views/sobremi.html">Sobre mi</a>
+          <a class="Sections__nav__link" href="/views/galeria.html">Galeria</a>
+          <a class="Sections__nav__link Sections__nav__link-active" href="#"
+            >Contacto</a
+          >
+        </nav>
+        <div class="Sections__content Contacto">
+          <h1 class="Contacto__title">Belen Llull</h1>
+          <div class="Contacto__row">
+            <i class="Contacto__icon fas fa-phone"></i>
+            <p>Telefono: 3434048931</p>
+          </div>
+          <div class="Contacto__row">
+            <i class="Contacto__icon fas fa-envelope"></i>
+            <p>Email: hernanllull@gmail.com</p>
+          </div>
+          <div class="Contacto__row">
+            <i class="Contacto__icon fab fa-instagram"></i>
+            <p>Instagram: /simonadiseno</p>
+          </div>
+          <div class="Contacto__row">
+            <i class="Contacto__icon fab fa-facebook"></i>
+            <p>Facebook: /simonadiseno</p>
+          </div>
+          <h2 class="Contacto__subtitle">Tambien podes enviarme un mensaje</h2>
+          <form class="Contacto__form" action="">
+            <div class="Contacto__form__row">
+              <label class="Contacto__form__label" for="name">Nombre </label>
+              <input class="Contacto__form__input" id="name" type="text" />
+            </div>
+            <div class="Contacto__form__row">
+              <label class="Contacto__form__label" for="email">Email </label>
+              <input class="Contacto__form__input" id="email" type="email" />
+            </div>
+            <div class="Contacto__form__row">
+              <label class="Contacto__form__label" for="message"
+                >Mensaje
+              </label>
+              <textarea
+                class="Contacto__form__textarea"
+                id="message"
+                rows="10"
+              ></textarea>
+            </div>
+            <div class="Contacto__form__row">
+              <button class="Contacto__form__button" type="submit">
+                Enviar
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/426bdb1286.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let active = false;
+      const btn = document.getElementById("btn-collapse");
+      const nav = document.getElementById("responsive-nav");
+      btn.addEventListener(
+        "click",
+        (e) => {
+          if (active) {
+            btn.classList.remove("is-active");
+            nav.classList.remove("Main__responsive-nav-active");
+            active = false;
+          } else {
+            btn.classList.add("is-active");
+            nav.classList.add("Main__responsive-nav-active");
+            active = true;
+          }
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simona Diseño</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link href="/static/css/dist/hamburgers.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="Main">
+      <nav id="responsive-nav" class="Main__responsive-nav">
+        <button
+          class="hamburger hamburger--spin"
+          type="button"
+          id="btn-collapse"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <div class="Main__responsive-nav__link"><a href="/">Inicio</a></div>
+        <div class="Main__responsive-nav__link"><a href="/views/sobremi.html">Sobre mi</a></div>
+        <div class="Main__responsive-nav__link">
+          <a class="active" href=#"">Galeria</a>
+        </div>
+        <div class="Main__responsive-nav__link"><a href="/views/contacto.html">Contacto</a></div>
+      </nav>
+      <header class="Main__header">
+        <h1 class="Main__header__title">Simona</h1>
+        <h2 class="Main__header__subtitle">Objetos de diseño</h2>
+      </header>
+      <div id="Preview" class="Main__preview d-none">
+        <div class="Preview__filter"></div>
+        <div id="Preview__cancel" class="Preview__cancel">X</div>
+        <div class="Preview__img__container">
+          <img id="Preview__img" class="Preview__img" src="/static/mates/mates.jpg"/>
+        </div>
+      </div>
+      <div class="Main__links">
+        <a
+          class="Main__links__link"
+          href="https://www.facebook.com/simona.santafeparana"
+          target="__blank"
+        >
+          <img class="Main__links__img" src="/static/assets/facebook.svg" />
+        </a>
+        <a
+          class="Main__links__link"
+          href="https://www.instagram.com/simona.diseno/"
+          target="__blank"
+        >
+          <img class="Main__links__img" src="/static/assets/instagram.svg" />
+        </a>
+        <a
+          class="Main__links__link"
+          href="https://wa.me/543435243489?text=Hola%2c+queria+realizar+una+consulta."
+          target="__blank"
+        >
+          <img class="Main__links__img" src="/static/assets/whatsapp.svg" />
+        </a>
+      </div>
+      <section class="Main__sections">
+        <nav class="Sections__nav">
+          <a class="Sections__nav__link" href="/">Inicio</a>
+          <a class="Sections__nav__link" href="/views/sobremi.html"
+            >Sobre mi</a
+          >
+          <a class="Sections__nav__link Sections__nav__link-active" href="#"
+            >Galeria</a
+          >
+          <a class="Sections__nav__link" href="/views/contacto.html">Contacto</a>
+        </nav>
+        <div class="Sections__content Galeria">
+          <div class="Galeria__categories">
+            <h1 class="Galeria__title">Catalogo</h1>
+            <hr class="Galeria__divider"/>
+            <ul class="Galeria__listcategories">
+              <li class="Galeria__categoryItem Galeria__categoryItem-active" value="Mates">Mates</li>
+              <li class="Galeria__categoryItem" value="Tablas">Tablas</li>
+              <li class="Galeria__categoryItem" value="Personalizados">Personalizados</li>
+              <li class="Galeria__categoryItem" value="Todos">Todos</li>
+            </ul>
+          </div>
+          <div id="Galery__products" class="Galeria__products">
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      let active = false;
+      let activepreview = false;
+      const isPhone = window.innerWidth < 996 ;
+      let actualcategory = "Mates";
+      let products = [];
+
+      function openPreview(url){
+        const preview_img = document.getElementById("Preview__img");
+        const preview = document.getElementById("Preview");
+        preview_img.src = url;
+        preview.classList.remove("d-none")
+      }
+      function renderProducts(){
+        const galery = document.getElementById("Galery__products");
+        galery.innerHTML = "";
+        products.forEach(product => {
+          if(product.category === actualcategory || actualcategory === "Todos"){
+            galery.innerHTML += `
+              <div class="Galeria__product">
+                <img class="Galeria__product__img" onclick="openPreview('${product.url}')" src="${product.url}" alt="" />
+                <h1 class="Galeria__product__name">${product.name}</h1>
+                <h2 class="Galeria__product__price">$${product.price}</h2>
+              </div>
+            `
+          }
+        });
+      }
+      window.onload = function(){
+        const btn = document.getElementById("btn-collapse");
+        const nav = document.getElementById("responsive-nav");
+        btn.addEventListener(
+          "click",
+          (e) => {
+            if (active) {
+              btn.classList.remove("is-active");
+              nav.classList.remove("Main__responsive-nav-active");
+              active = false;
+            } else {
+              btn.classList.add("is-active");
+              nav.classList.add("Main__responsive-nav-active");
+              active = true;
+            }
+          },
+          false
+        );
+
+        const categories = document.getElementsByTagName("li");
+        for(let i=0;i<categories.length;i++){
+          categories[i].addEventListener("click", e => {
+            actualcategory = categories[i].getAttribute("value");
+            renderProducts();
+            for(let j=0;j<categories.length;j++){
+              categories[j].classList.remove("Galeria__categoryItem-active");
+            }
+            categories[i].classList.add("Galeria__categoryItem-active");
+          });
+        }
+        const preview_img = document.getElementById("Preview__img");
+        const preview_cancel = document.getElementById("Preview__cancel");
+        const preview = document.getElementById("Preview");
+        preview_img.addEventListener("mousemove",e => {preview_img.style.transform="scale(3)";preview_img.style.transformOrigin = `${e.offsetX}px ${e.offsetY}px`});
+        preview_img.addEventListener("mouseout",() => {preview_img.style.transform = ""});
+        preview_cancel.addEventListener("click", () => {preview.classList.add("d-none")});
+        if(isPhone){
+          preview_img.addEventListener("click",() => {
+          if(activepreview){
+            preview_img.style.transform = "";
+            activepreview=false;
+          }else{
+            preview_img.style.transform = "scale(2)";
+            activepreview=true;
+          }});
+        }
+
+        fetch("http://localhost:4000/products").then(res => res.json()).then(res => {
+          products = res.products;
+          renderProducts();
+        });
+
+      }
+
+    </script>
+  </body>
+</html>
