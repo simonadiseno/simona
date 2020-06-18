@@ -139,12 +139,16 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  right: calc(7.5% - 35px);
+  right: calc(7.5% - 50px);
 }
 .Main__links__link {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   margin: 2rem 0;
+  padding: 16px;
+}
+.Main__links__link:hover {
+  background-color: #db9b88;
 }
 .Main__links__img {
   width: 100%;
@@ -272,6 +276,7 @@
   height: 80%;
   object-fit: cover;
   cursor: pointer;
+  user-select: none;
 }
 .Galeria__product__name {
   margin-top: 1rem;
