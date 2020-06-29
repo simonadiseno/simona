@@ -5,6 +5,7 @@
     <title>Simona Diseño</title>
     <link rel="stylesheet" href="/simona/static/css/styles.css" />
     <link href="/simona/static/css/dist/hamburgers.css" rel="stylesheet" />
+    <script src='./products.js'></script>
   </head>
   <body>
     <main class="Main">
@@ -166,7 +167,7 @@
         fetch("https://simonadiseno.herokuapp.com/products").then(res => res.json()).then(res => {
           products = res.products;
           renderProducts();
-        });
+        }).catch(err => renderProducts());
 
       }
 
