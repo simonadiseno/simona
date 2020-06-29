@@ -165,7 +165,9 @@
         }
 
         fetch("https://simonadiseno.herokuapp.com/products").then(res => res.json()).then(res => {
-          products = res.products;
+          if(res){
+            products = res.products;
+          }
           renderProducts();
         }).catch(err => renderProducts());
 
