@@ -306,11 +306,11 @@
 .Contacto__row {
   display: flex;
   font-size: 24px;
-  margin: 1rem 2rem;
+  margin: 1rem 0;
 }
 .Contacto__icon {
   font-size: 24px;
-  margin: 0 1rem;
+  margin-right: 1rem;
 }
 .Contacto__form {
   width: 75%;
