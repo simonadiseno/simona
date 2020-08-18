@@ -3,8 +3,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simona Diseño</title>
+    <link rel="icon" type="image/png" href="/static/assets/favicon.png" />
+    <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/styles.css" />
     <link href="/static/css/dist/hamburgers.css" rel="stylesheet" />
+    <link rel="manifest" href="/manifest.json" />
   </head>
   <body>
     <main class="Main">
@@ -15,12 +18,13 @@
           id="btn-collapse"
         >
           <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
+            <span
+              id="hamburger-inner"
+              class="hamburger-inner hamburger-inner-active"
+            ></span>
           </span>
         </button>
-        <div class="Main__responsive-nav__link">
-          <a href="/">Inicio</a>
-        </div>
+        <div class="Main__responsive-nav__link"><a href="/">Inicio</a></div>
         <div class="Main__responsive-nav__link">
           <a class="active" href="#">Sobre mi</a>
         </div>
@@ -116,25 +120,6 @@
         </div>
       </section>
     </main>
-    <script>
-      let active = false;
-      const btn = document.getElementById("btn-collapse");
-      const nav = document.getElementById("responsive-nav");
-      btn.addEventListener(
-        "click",
-        (e) => {
-          if (active) {
-            btn.classList.remove("is-active");
-            nav.classList.remove("Main__responsive-nav-active");
-            active = false;
-          } else {
-            btn.classList.add("is-active");
-            nav.classList.add("Main__responsive-nav-active");
-            active = true;
-          }
-        },
-        false
-      );
-    </script>
+    <script src="/static/js/collapseButton.js"></script>
   </body>
 </html>

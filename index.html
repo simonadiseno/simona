@@ -3,8 +3,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simona Diseño</title>
+    <link rel="icon" type="image/png" href="/static/assets/favicon.png" />
+    <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/styles.css" />
     <link href="/static/css/dist/hamburgers.css" rel="stylesheet" />
+    <link rel="manifest" href="/manifest.json" />
   </head>
   <body>
     <main class="Main">
@@ -15,7 +18,10 @@
           id="btn-collapse"
         >
           <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
+            <span
+              id="hamburger-inner"
+              class="hamburger-inner hamburger-inner-active"
+            ></span>
           </span>
         </button>
         <div class="Main__responsive-nav__link">
@@ -33,7 +39,7 @@
       </nav>
       <header class="Main__header">
         <h1 class="Main__header__title">Simona</h1>
-        <h2 class="Main__header__subtitle">Objetos de diseño</h2>
+        <h2 class="Main__header__subtitle">Objetos en madera</h2>
       </header>
       <div class="Main__links">
         <a
@@ -59,7 +65,7 @@
         </a>
       </div>
       <section class="Main__sections">
-        <nav class="Sections__nav">
+        <nav class="Sections__nav Sections__nav-home">
           <a class="Sections__nav__link Sections__nav__link-active" href="#"
             >Inicio</a
           >
@@ -75,24 +81,15 @@
       </section>
     </main>
     <script>
-      let active = false;
-      const btn = document.getElementById("btn-collapse");
-      const nav = document.getElementById("responsive-nav");
-      btn.addEventListener(
-        "click",
-        (e) => {
-          if (active) {
-            btn.classList.remove("is-active");
-            nav.classList.remove("Main__responsive-nav-active");
-            active = false;
-          } else {
-            btn.classList.add("is-active");
-            nav.classList.add("Main__responsive-nav-active");
-            active = true;
-          }
-        },
-        false
-      );
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/static/js/serviceWorker.js")
+            .then(() => console.log("SW registered"))
+            .catch(() => console.log("SW not registered"));
+        });
+      }
     </script>
+    <script src="/static/js/collapseButton.js"></script>
   </body>
 </html>
