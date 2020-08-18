@@ -1,7 +1,6 @@
 const staticCacheName = "site-static";
 const assets = [
   "/",
-  "/manifest.json",
   "/index.html",
   "/static/js/collapseButton.js",
   "/static/css/dist/hamburgers.css",
