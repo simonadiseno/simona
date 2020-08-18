@@ -75,13 +75,12 @@
   display: none;
   height: 65px;
   overflow: hidden;
-  transition: all 0.5s;
-  transition: height 0.5s;
+  transition: all 0.7s;
   width: 100%;
 }
 .Main__responsive-nav-active {
   background-color: white;
-  height: 365px;
+  height: 375px;
 }
 .Main__responsive-nav__link {
   align-items: center;
@@ -281,6 +280,7 @@
 .Galeria__product {
   height: 450px;
   margin: auto;
+  margin-bottom: 3rem;
   padding: 1rem 0;
   text-align: center;
   width: 90%;
