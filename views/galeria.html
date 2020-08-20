@@ -147,11 +147,16 @@
           }});
         }
 
+        fetch("http://localhost:4000/products").then(res => res.json()).then(res => {
+          products = res.products;
+          renderProducts();
+        }).catch(() => renderProducts());
+        /*Production
         fetch("https://simonadiseno.herokuapp.com/products").then(res => res.json()).then(res => {
           products = res.products;
           renderProducts();
         }).catch(() => renderProducts());
-
+        */
       }
 
     </script>

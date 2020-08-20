@@ -1,0 +1,60 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simona Diseño</title>
+    <link rel="icon" type="image/png" href="/static/assets/favicon.png" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+  </head>
+
+  <body>
+    <main class="Home">
+      <p class="Home__signout">Sign out</p>
+      <p class="Home__title">Productos</p>
+      <div>
+        <button id="new-product" class="Home__new-product">
+          Añadir producto
+        </button>
+      </div>
+      <div>
+        <input
+          id="search"
+          class="Home__search"
+          type="text"
+          placeholder="Buscar"
+        />
+      </div>
+      <div id="products" class="Home__products"></div>
+      <div id="widget" class="Widget d-none">
+        <div class="Widget__form">
+          <p id="close-widget" class="Widget__close">X</p>
+          <p class="Widget__title">Crear o editar producto</p>
+          <label class="Widget__column" for=""
+            >Nombre
+            <input id="name" class="Widget__input" type="text" />
+          </label>
+          <label class="Widget__column" for=""
+            >Precio
+            <input id="price" class="Widget__input" type="number" />
+          </label>
+          <label class="Widget__column" for=""
+            >Categoria
+            <select id="category" class="Widget__input"
+              ><option value="Mates">Mates</option>
+              ><option value="Tablas y cuencos">Tablas y cuencos</option>
+              ><option value="Personalizados">Personalizados</option>
+            </select>
+          </label>
+          <label class="Widget__column" for=""
+            >Imagen
+            <input id="file" class="Widget__input" type="file" />
+          </label>
+          <img id="Widget__img" class="Widget__img" alt="" />
+          <button id="submit" class="Widget__btn">Finalizar</button>
+        </div>
+      </div>
+    </main>
+    <script src="/static/js/home.js"></script>
+  </body>
+</html>
