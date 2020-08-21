@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/css/styles.css" />
     <link href="/static/css/dist/hamburgers.css" rel="stylesheet" />
     <link rel="manifest" href="/manifest.json" />
+    <script src="/static/js/const.js"></script>
   </head>
   <body>
     <main class="Main">
@@ -147,16 +148,10 @@
           }});
         }
 
-        fetch("http://localhost:4000/products").then(res => res.json()).then(res => {
+        fetch(HOST + "products").then(res => res.json()).then(res => {
           products = res.products;
           renderProducts();
         }).catch(() => renderProducts());
-        /*Production
-        fetch("https://simonadiseno.herokuapp.com/products").then(res => res.json()).then(res => {
-          products = res.products;
-          renderProducts();
-        }).catch(() => renderProducts());
-        */
       }
 
     </script>

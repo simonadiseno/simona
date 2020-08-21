@@ -4,7 +4,7 @@ let filteredProducts = [];
 let tabIndex = 1;
 
 function onDelete(id) {
-  fetch("http://localhost:4000/product/" + id, {
+  fetch(HOST + "product/" + id, {
     method: "delete",
   }).then((res) => {
     if (res.status === 200) {
@@ -114,31 +114,29 @@ window.addEventListener("load", () => {
         body: JSON.stringify({ name, price, category }),
         headers: { "Content-Type": "application/json" },
       };
-      fetch("http://localhost:4000/product/" + actualProduct.id, options).then(
-        (res) => {
-          if (res.status === 200) {
-            products = products.map((p) => {
-              if (p.id === actualProduct.id) {
-                return {
-                  id: actualProduct.id,
-                  name,
-                  price,
-                  category,
-                  url: actualProduct.url,
-                };
-              } else return p;
-            });
-            widget.classList.add("d-none");
-            renderProducts();
-          }
+      fetch(HOST + "product/" + actualProduct.id, options).then((res) => {
+        if (res.status === 200) {
+          products = products.map((p) => {
+            if (p.id === actualProduct.id) {
+              return {
+                id: actualProduct.id,
+                name,
+                price,
+                category,
+                url: actualProduct.url,
+              };
+            } else return p;
+          });
+          widget.classList.add("d-none");
+          renderProducts();
         }
-      );
+      });
     } else {
       const options = {
         method: "POST",
         body: formData,
       };
-      fetch("http://localhost:4000/product/", options)
+      fetch(HOST + "product/", options)
         .then((res) => {
           if (res.status === 200) {
             return res.json();
@@ -165,7 +163,7 @@ window.addEventListener("load", () => {
     document.getElementById("widget").classList.remove("d-none");
   });
 
-  fetch("http://localhost:4000/products")
+  fetch(HOST + "products")
     .then((res) => res.json())
     .then((res) => {
       products = res.products;
