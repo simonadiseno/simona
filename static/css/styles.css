@@ -463,14 +463,16 @@
   margin: 1rem 0;
 }
 .Home__more-products {
-  display: flex;
-  justify-content: center;
-  color: white;
-  border-radius: 3rem;
-  padding: 1rem;
-  width: 50px;
   background-color: #5ec9f7;
+  border-radius: 3rem;
+  color: white;
   cursor: pointer;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.7rem 1rem;
+  width: 50px;
 }
 .Product__img {
   height: 200px;

@@ -41,7 +41,7 @@ function filterProducts(key) {
   tabIndex = 1;
 }
 function renderProducts(key) {
-  filterProducts(key);
+  if (key) filterProducts(key);
   const productsContainer = document.getElementById("products");
   productsContainer.innerHTML = "";
   filteredProducts.forEach((product, index) => {
