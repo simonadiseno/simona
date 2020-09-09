@@ -3,7 +3,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simona diseño</title>
-    <link rel="icon" type="image/png" href="/static/assets/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/static/assets/favicons/favicon.png"
+    />
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/main.css" />
     <link rel="stylesheet" href="/static/css/hamburger.css" />
@@ -21,13 +25,13 @@
         <a href="/">
           <li class="nav__link">Inicio</li>
         </a>
-        <a href="#">
+        <a href="/views/sobremi.html">
           <li class="nav__link">Sobre mi</li>
         </a>
-        <a href="/views/galery.html">
+        <a href="#">
           <li class="nav__link nav__link--active">Productos</li>
         </a>
-        <a href="#">
+        <a href="/views/contacto.html">
           <li class="nav__link">Contacto</li>
         </a>
       </ul>
@@ -38,20 +42,23 @@
         <img
           id="preview-cancel"
           class="galery__preview__close"
-          src="/static/assets/cancel.svg"
+          src="/static/assets/icons/cancel.svg"
         />
         <div id="preview-img-ly" class="galery__preview__product">
-          <img id="preview-img" src="/static/assets/cuencos.jpg" />
+          <img id="preview-img" src="/static/assets/images/cuencos.jpg" />
         </div>
       </section>
       <div class="galery__ly-products">
-        <section id="filter-products" class="galery__filter-products">
+        <section
+          id="filter-products"
+          class="galery__filter-products galery__filter-products--hide"
+        >
           <div class="d-flex align-center justify-between">
             <h1>Filtros</h1>
             <img
               id="dropdown-btn"
               class="galery__filter-products__icon"
-              src="/static/assets/up-arrow.svg"
+              src="/static/assets/icons/down-arrow.svg"
               alt=""
             />
           </div>
@@ -86,7 +93,36 @@
         <section id="galery" class="galery__products"></section>
       </div>
     </section>
+    <footer id="footer" class="footer">
+      <div class="footer__responsive">
+        <img
+          id="footer-btn"
+          class="footer__responsive__icon"
+          src="/static/assets/icons/down-arrow-w.svg"
+          alt=""
+        />
+      </div>
+      <div class="footer__socialmedia">
+        <h2>Redes sociales:</h2>
+        <div class="d-flex align-center">
+          <img class="footer__icon" src="/static/assets/icons/facebook.svg" />
+          <p>/simonadiseno</p>
+        </div>
+        <div class="d-flex align-center">
+          <img class="footer__icon" src="/static/assets/icons/instagram.svg" />
+          <p>/simonadiseno</p>
+        </div>
+      </div>
+      <div class="footer__contact">
+        <h2>Contacto:</h2>
+        <div class="d-flex align-center">
+          <img class="footer__icon" src="/static/assets/icons/whatsapp.svg" />
+          <p>+543434048931</p>
+        </div>
+      </div>
+    </footer>
     <script src="/static/js/navbar.js"></script>
     <script src="/static/js/galery.js"></script>
+    <script src="/static/js/footer.js"></script>
   </body>
 </html>

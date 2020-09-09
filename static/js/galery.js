@@ -1,69 +1,4 @@
 let products = [];
-const products2 = [
-  {
-    id: 1,
-    name: "Mate",
-    price: 150,
-    category: "Mates",
-    url: "/static/assets/product.png",
-  },
-  {
-    id: 2,
-    name: "Cuenco",
-    price: 150,
-    category: "Cuencos",
-    url: "/static/assets/producto2.png",
-  },
-  {
-    id: 3,
-    name: "Cuencos lindos",
-    price: 150,
-    category: "Tablas",
-    url: "/static/assets/producto3.png",
-  },
-  {
-    id: 5,
-    name: "Velas",
-    price: 150,
-    category: "Velas",
-    url: "/static/assets/producto2.png",
-  },
-  {
-    id: 6,
-    name: "Mate maria",
-    price: 150,
-    category: "Mates",
-    url: "/static/assets/producto3.png",
-  },
-  {
-    id: 4,
-    name: "Mate maria",
-    price: 150,
-    category: "Mates",
-    url: "/static/assets/product.png",
-  },
-  {
-    id: 7,
-    name: "Mate maria",
-    price: 150,
-    category: "Mates",
-    url: "/static/assets/product.png",
-  },
-  {
-    id: 8,
-    name: "Mate maria",
-    price: 150,
-    category: "Mates",
-    url: "/static/assets/producto2.png",
-  },
-  {
-    id: 9,
-    name: "Mate maria",
-    price: 150,
-    category: "Mates",
-    url: "/static/assets/producto3.png",
-  },
-];
 let filteredProducts = products;
 let inputValue = "";
 const url = new URL(window.location);
@@ -121,7 +56,7 @@ window.addEventListener("load", async () => {
   if (res.products) {
     products = res.products;
   }
-  let filterActive = true;
+  let filterActive = false;
   let sortByPrice = 0;
   let sortByDate = 0;
   document.getElementById("dropdown-btn").addEventListener("click", () => {
@@ -130,13 +65,13 @@ window.addEventListener("load", async () => {
         .getElementById("filter-products")
         .classList.add("galery__filter-products--hide");
       document.getElementById("dropdown-btn").src =
-        "/static/assets/down-arrow.svg";
+        "/static/assets/icons/down-arrow.svg";
     } else {
       document
         .getElementById("filter-products")
         .classList.remove("galery__filter-products--hide");
       document.getElementById("dropdown-btn").src =
-        "/static/assets/up-arrow.svg";
+        "/static/assets/icons/up-arrow.svg";
     }
     filterActive = !filterActive;
   });
@@ -145,8 +80,8 @@ window.addEventListener("load", async () => {
   const ly = document.getElementById("preview-img-ly");
   ly.addEventListener("mousemove", (e) => {
     previewImg.style.transform = `scale(1.5) translate(${
-      (e.clientX - 600) / -5
-    }px,${(e.clientY - 600) / -5}px)`;
+      (e.clientX - 800) / -5
+    }px,${(e.clientY - 350) / -5}px)`;
   });
   ly.addEventListener("mouseleave", (e) => {
     previewImg.style.transform = null;
