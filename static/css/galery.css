@@ -190,7 +190,9 @@ p {
   .galery__filter-products--hide {
     height: 150px !important;
   }
-
+  .galery__product:hover {
+    background: transparent;
+  }
   .galery__products {
     display: flex;
     flex-direction: column;

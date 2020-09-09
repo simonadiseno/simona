@@ -79,9 +79,11 @@ window.addEventListener("load", async () => {
   const previewImg = document.getElementById("preview-img");
   const ly = document.getElementById("preview-img-ly");
   ly.addEventListener("mousemove", (e) => {
-    previewImg.style.transform = `scale(1.5) translate(${
-      (e.clientX - 800) / -5
-    }px,${(e.clientY - 350) / -5}px)`;
+    if (window.innerWidth > 768) {
+      previewImg.style.transform = `scale(1.5) translate(${
+        (e.clientX - 800) / -5
+      }px,${(e.clientY - 350) / -5}px)`;
+    }
   });
   ly.addEventListener("mouseleave", (e) => {
     previewImg.style.transform = null;
