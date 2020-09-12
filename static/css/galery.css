@@ -61,7 +61,7 @@ p {
   position: relative;
   min-width: 300px;
   overflow: hidden;
-  height: 350px;
+  height: 400px;
   padding: 16px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   transition: all 0.5s;

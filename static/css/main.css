@@ -17,7 +17,10 @@
 /*General styles*/
 a {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+a:hover {
+  opacity: 0.5;
 }
 .d-flex {
   display: flex;
@@ -304,8 +307,8 @@ h3 {
   background-image: url("/static/assets/images/velas.jpg");
   background-size: cover;
 }
-.categories__item--tablas {
-  background-image: url("/static/assets/images/tablas.jpg");
+.categories__item--macetas {
+  background-image: url("/static/assets/images/macetas.jpg");
   background-size: cover;
 }
 .categories__carousel {
