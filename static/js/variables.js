@@ -1,2 +1,2 @@
 const HOST = "https://simonadiseno.herokuapp.com";
-const FRONT = "https://simonad.store";
+const FRONT = "http://localhost:8080";

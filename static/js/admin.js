@@ -128,7 +128,7 @@ function editProduct() {
   });
 }
 window.addEventListener("load", async () => {
-  if(!localStorage.getItem("token")){
+  if (!localStorage.getItem("token")) {
     redirectLogin();
   }
   const res = await fetch(`${HOST}/products`).then((res) => res.json());
@@ -178,7 +178,8 @@ window.addEventListener("load", async () => {
   });
 
   const btnAddProduct = document.getElementById("add-product");
-  btnAddProduct.addEventListener("click", () => {
+  btnAddProduct.addEventListener("click", (e) => {
+    e.preventDefault();
     actualProduct = null;
     document.getElementById("img-preview").src = "";
     document.getElementById("form-name").value = "";
