@@ -6,7 +6,6 @@
   height: 100vh;
   background: white;
   display: flex;
-  justify-content: center;
   align-items: center;
   overflow: hidden;
 }
@@ -16,6 +15,7 @@
   width: 150px;
   height: 150px;
   transform: rotate(45deg);
+  left: calc(100% - 150px - 75px / 2);
   transform-origin: 40px 40px;
 }
 .lds-heart div {
