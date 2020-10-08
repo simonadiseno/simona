@@ -390,24 +390,7 @@ h3 {
 /*Medium devices (tablets, 768px and up)*/
 @media (max-width: 768px) {
   .footer {
-    justify-content: start;
-    flex-direction: column;
-  }
-  .footer__responsive {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-  .footer__socialmedia h2,
-  .footer__contact h2 {
-    margin: 8px 0;
-  }
-  .footer__socialmedia,
-  .footer__contact {
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start;
-    padding: 0 16px;
+    display: none;
   }
 }
 

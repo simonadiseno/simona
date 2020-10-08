@@ -1,3 +1,4 @@
+const SWAP = 200;
 window.addEventListener("load", () => {
   let actualItem = 0;
   const items = document.getElementsByClassName("carousel__item");
@@ -50,10 +51,10 @@ window.addEventListener("load", () => {
   });
   document.getElementById("carousel").addEventListener("mousemove", (e) => {
     if (initialPosition !== null) {
-      if (e.offsetX - initialPosition < -50) {
+      if (e.offsetX - initialPosition < -SWAP) {
         renderNext();
         initialPosition = null;
-      } else if (e.offsetX - initialPosition > 50) {
+      } else if (e.offsetX - initialPosition > SWAP) {
         renderPreview();
         initialPosition = null;
       }
@@ -67,10 +68,10 @@ window.addEventListener("load", () => {
   });
   document.getElementById("carousel").addEventListener("touchmove", (e) => {
     if (initialPosition !== null) {
-      if (e.touches[0].clientX - initialPosition < -50) {
+      if (e.touches[0].clientX - initialPosition < -SWAP) {
         renderNext();
         initialPosition = null;
-      } else if (e.touches[0].clientX - initialPosition > 50) {
+      } else if (e.touches[0].clientX - initialPosition > SWAP) {
         renderPreview();
         initialPosition = null;
       }
