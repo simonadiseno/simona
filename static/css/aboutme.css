@@ -1,42 +1,42 @@
-.sobremi {
+.aboutme {
   min-height: calc(100vh - 122px);
   padding: 16px 64px;
 }
-.sobremi__title {
+.aboutme__title {
   font-family: "Roboto-light", sans-serif;
   font-weight: 100;
   font-size: 32px;
   margin: 0;
 }
-.sobremi__divisor {
-  width: 300px;
+.aboutme__divisor {
+  width: 100px;
   height: 1px;
   background: #ffbfbf;
   border: none;
   margin: 2px 0 16px 0;
 }
-.sobremi__img {
+.aboutme__img {
   max-width: 500px;
   object-fit: cover;
   width: 50%;
 }
-.sobremi__ly {
+.aboutme__ly {
   display: flex;
 }
-.sobremi__description {
+.aboutme__description {
   margin: 0 32px;
 }
 @media (max-width: 1200px) {
-  .sobremi {
+  .aboutme {
     padding: 16px;
   }
-  .sobremi__ly {
+  .aboutme__ly {
     flex-direction: column;
   }
-  .sobremi__description {
+  .aboutme__description {
     margin: 0;
   }
-  .sobremi__img {
+  .aboutme__img {
     margin: 16px 0;
     width: 100%;
   }

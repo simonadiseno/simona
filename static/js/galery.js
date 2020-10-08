@@ -31,8 +31,10 @@ function renderProducts() {
     galery.innerHTML += `
       <div onClick="onClickProduct('${product.id}')" class="galery__product">
         <img src="${product.url}" alt="" class="img" />
-        <h1>${product.name}</h1>
-        <h2>$${product.price}</h2>
+        <div class="galery__info">
+          <h1>${product.name}</h1>
+          <h2>$${product.price}</h2>
+        </div>
       </div>
     `;
   });

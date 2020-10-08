@@ -6,45 +6,15 @@
   height: 100vh;
   background: white;
   display: flex;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
 }
-.lds-heart {
-  display: inline-block;
-  position: relative;
-  width: 150px;
-  height: 150px;
-  transform: rotate(45deg);
-  left: calc(100% - 150px - 75px / 2);
-  transform-origin: 40px 40px;
+.loader__heart-icon{
+  width: 75px;
+  animation: heart-animation 1s infinite;
 }
-.lds-heart div {
-  top: 32px;
-  left: 32px;
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  background: #ebb0b0;
-  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.lds-heart div:after,
-.lds-heart div:before {
-  content: " ";
-  position: absolute;
-  display: block;
-  width: 32px;
-  height: 32px;
-  background: #ebb0b0;
-}
-.lds-heart div:before {
-  left: -24px;
-  border-radius: 50% 0 0 50%;
-}
-.lds-heart div:after {
-  top: -24px;
-  border-radius: 50% 50% 0 0;
-}
-@keyframes lds-heart {
+@keyframes heart-animation {
   0% {
     transform: scale(0.95);
   }

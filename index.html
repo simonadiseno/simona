@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="/static/css/carousel.css" />
     <link rel="stylesheet" href="/static/css/hamburger.css" />
     <link rel="stylesheet" href="/static/css/loader.css" />
+    <script src="/static/js/home.js"></script>
   </head>
   <body>
     <main id="main" class="main">
       <div id="loader" class="loader">
-        <div class="lds-heart"><div></div></div>
+        <img class="loader__heart-icon" src="/static/assets/icons/heart.svg" alt="">
       </div>
       <nav id="nav" class="nav">
         <div class="nav__title">
@@ -26,9 +27,9 @@
         <a id="hamburger" class="nav__hamburger" href="#"><span></span></a>
         <ul class="nav__links">
           <a href="/"><li class="nav__link nav__link--active">Inicio</li></a>
-          <a href="/views/sobremi.html"><li class="nav__link">Sobre mi</li></a>
+          <a href="/views/aboutme.html"><li class="nav__link">Sobre mi</li></a>
           <a href="/views/galery.html"><li class="nav__link">Productos</li></a>
-          <a href="/views/contacto.html"><li class="nav__link">Contacto</li></a>
+          <a href="/views/contact.html"><li class="nav__link">Contacto</li></a>
         </ul>
       </nav>
       <section class="promotion"></section>
@@ -75,7 +76,7 @@
         <div class="info__item">
           <img
             class="info__icon"
-            src="/static/assets/icons/hearth.svg"
+            src="/static/assets/icons/heart-w.svg"
             alt="Imagen de un corazon (hecho a medida)"
           />
           <h3>Hechos a tu medida</h3>
@@ -218,7 +219,6 @@
       </footer>
     </main>
     <script src="/static/js/navbar.js"></script>
-    <script src="/static/js/home.js"></script>
     <script src="/static/js/carousel.js"></script>
     
     <script src="/static/js/footer.js"></script>
