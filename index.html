@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simona diseño</title>
+    <link rel="manifest" href="./manifest.json">
     <link
       rel="icon"
       type="image/png"
@@ -216,5 +217,16 @@
     </main>
     <script src="/static/js/navbar.js"></script>
     <script src="/static/js/carousel.js"></script>
+    <script>
+      if("serviceWorker" in navigator){
+        window.addEventListener("load",()=>{
+          navigator.serviceWorker.register("sw.js").then(swReg => {
+            console.log("Worker registered!");
+          }).catch(error =>{
+            console.log("There was an error",error)
+          })
+        });
+      }
+    </script>
   </body>
 </html>
