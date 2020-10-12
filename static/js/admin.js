@@ -45,11 +45,13 @@ function renderProducts() {
     galery.innerHTML += `
       <div class="galery__product galery__product--admin">
         <img src="${product.url}" alt="" class="img" />
-        <h1>${product.name}</h1>
-        <h2>$${product.price}</h2>
-        <div>
-            <img onclick='editWrapper("${product.id}")' class="galery__product__icon" src="/static/assets/icons/edit.svg"/>
-            <img onclick='deleteProduct("${product.id}")' class="galery__product__icon" src="/static/assets/icons/trash.svg"/>
+        <div class="galery__info">
+          <h1>${product.name}</h1>
+          <h2>$${product.price}</h2>
+          <div>
+              <img onclick='editWrapper("${product.id}")' class="galery__product__icon" src="/static/assets/icons/edit.svg"/>
+              <img onclick='deleteProduct("${product.id}")' class="galery__product__icon" src="/static/assets/icons/trash.svg"/>
+          </div>
         </div>
       </div>
     `;
