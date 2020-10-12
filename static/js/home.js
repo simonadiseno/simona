@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
   for (let i = 0; i < categories.length; i++) {
     categories[i].addEventListener("click", () => {
       window.location.replace(
-        "/views/galery.html?category=" +
+        "/views/galery?category=" +
           categories[i].getAttribute("data-value").toLowerCase()
       );
     });

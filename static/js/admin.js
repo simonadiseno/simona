@@ -8,7 +8,7 @@ let actualCategory = url.searchParams.get("category")
   : "todos";
 
 function redirectLogin() {
-  window.location.href = FRONT + "/views/login.html ";
+  window.location.href = FRONT + "/views/login ";
 }
 function filterProducts() {
   filteredProducts = products.filter((product) =>
