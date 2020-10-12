@@ -128,15 +128,14 @@ p {
   overflow: hidden;
 }
 .galery__product--admin {
-  padding: 0 !important;
-  padding-bottom: 32px !important;
+  height: 450px !important;
 }
 .galery__info {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 100px;
+  height: 100%;
 }
 .galery__product:hover {
   background: #ffe8e8;
