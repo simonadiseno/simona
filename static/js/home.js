@@ -4,6 +4,9 @@ const bestProducts = [
   "/static/assets/images/product3.png",
 ];
 let actualBest = 0;
+setTimeout(() => {
+  document.getElementById("loader").classList.add("d-none");
+}, 3000);
 function onLoadImage() {
   document.getElementById("loader").classList.add("d-none");
 }
