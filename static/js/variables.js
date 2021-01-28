@@ -1,2 +1,2 @@
-const HOST = "https://simonadiseno.herokuapp.com";
+const HOST = "https://simonad.herokuapp.com";
 const FRONT = "https://simonad.store";
